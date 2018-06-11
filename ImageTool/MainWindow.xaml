@@ -4,10 +4,15 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:views="clr-namespace:ImageTool.Views"
         xmlns:local="clr-namespace:ImageTool"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="图片分析工具" WindowState="Maximized">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.8*"/>
+            <ColumnDefinition Width="0.2*"/>
+        </Grid.ColumnDefinitions>
+        <views:ImageShowView Grid.Column="0"/>
+
     </Grid>
 </controls:MetroWindow>
