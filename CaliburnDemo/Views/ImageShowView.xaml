@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="ImageToolDemo.Views.ImageShowView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ImageToolDemo.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Name="ImageStackPanel" Grid.Row="0" Orientation="Horizontal">
+            <Button Name="ImageButton" Content="选择图片" FontSize="16" FontStretch="Normal" 
+                    Click="ImageButton_Click"/>
+            <Label Name="RGBLabel" FontSize="16" Margin="10,0,10,0" VerticalContentAlignment="Center" Content="R：  G：  B：  "/>
+            <Label Name="XYLabel" FontSize="16" Margin="10,0,10,0" VerticalContentAlignment="Center"  Content="X：  Y：  "/>
+        </StackPanel>
+        <ScrollViewer Name="ImageScrollViewer" HorizontalScrollBarVisibility="Visible" Grid.Row="1"
+                      VerticalScrollBarVisibility="Visible" PreviewMouseLeftButtonDown="ImageScrollViewer_PreviewMouseLeftButtonDown"
+                      PreviewMouseLeftButtonUp="ImageScrollViewer_PreviewMouseLeftButtonUp"
+                      PreviewMouseMove="ImageScrollViewer_PreviewMouseMove">
+            <Grid>
+                <Image Name="ImageShow" RenderOptions.BitmapScalingMode="NearestNeighbor" RenderOptions.ClearTypeHint="Enabled"
+                       MouseMove="ImageShow_MouseMove"  
+                       MouseWheel="ImageShow_MouseWheel"
+                       MouseRightButtonDown="ImageShow_MouseRightButtonDown"
+                       MouseRightButtonUp="ImageShow_MouseRightButtonUp"/>
+                <Grid Name="ImageGrid"/>
+            </Grid>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

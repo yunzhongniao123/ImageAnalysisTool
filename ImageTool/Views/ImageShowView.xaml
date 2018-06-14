@@ -12,17 +12,21 @@
             <RowDefinition Height="*"/>            
         </Grid.RowDefinitions>
         <StackPanel Name="ImageStackPanel" Grid.Row="0" Orientation="Horizontal">
-            <Button Name="ImageButton" Content="选择图片" FontSize="16" FontStretch="Normal" Click="ImageButton_Click"/>
+            <Button Name="ImageButton" Content="选择图片" FontSize="16" FontStretch="Normal" 
+                    Click="ImageButton_Click"/>
+            <Label Name="RGBLabel" FontSize="16" Margin="10,0,10,0" VerticalContentAlignment="Center" Content="R：  G：  B：  "/>
+            <Label Name="XYLabel" FontSize="16" Margin="10,0,10,0" VerticalContentAlignment="Center"  Content="X：  Y：  "/>
         </StackPanel>
-        <ScrollViewer Name="ImageScrollViewer" HorizontalScrollBarVisibility="Hidden" Grid.Row="1"
-                      VerticalScrollBarVisibility="Hidden" PreviewMouseLeftButtonDown="ImageScrollViewer_PreviewMouseLeftButtonDown"
+        <ScrollViewer Name="ImageScrollViewer" HorizontalScrollBarVisibility="Visible" Grid.Row="1"
+                      VerticalScrollBarVisibility="Visible" PreviewMouseLeftButtonDown="ImageScrollViewer_PreviewMouseLeftButtonDown"
                       PreviewMouseLeftButtonUp="ImageScrollViewer_PreviewMouseLeftButtonUp"
-                      PreviewMouseMove="ImageScrollViewer_PreviewMouseMove"
-                      PreviewMouseWheel="ImageScrollViewer_PreviewMouseWheel">
+                      PreviewMouseMove="ImageScrollViewer_PreviewMouseMove">
             <Grid>
                 <Image Name="ImageShow" RenderOptions.BitmapScalingMode="NearestNeighbor" RenderOptions.ClearTypeHint="Enabled"
-                       MouseMove="ImageShow_MouseMove"
-                       MouseWheel="ImageShow_MouseWheel"/>
+                       MouseMove="ImageShow_MouseMove"  
+                       MouseWheel="ImageShow_MouseWheel"
+                       MouseRightButtonDown="ImageShow_MouseRightButtonDown"
+                       MouseRightButtonUp="ImageShow_MouseRightButtonUp"/>
                 <Grid Name="ImageGrid"/>
             </Grid>
         </ScrollViewer>
