@@ -369,7 +369,13 @@ namespace ImageToolDemo
 
         #endregion
 
+        #region 图片分析
+        public static void HistAnalysis(this Mat src, ref double minValue, ref double maxValue, double peakValue)
+        {
 
+        }
+
+        #endregion
 
     }
 }

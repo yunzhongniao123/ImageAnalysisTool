@@ -5,12 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"        
         xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         xmlns:views="clr-namespace:ImageToolDemo.Views"
+        Icon="../Resources/tools.png"
         Title="图像分析工具" WindowState="Maximized">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="0.8*"/>
-            <ColumnDefinition Width="0.2*"/>
+            <ColumnDefinition Width="0.7*"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="0.3*"/>
         </Grid.ColumnDefinitions>
         <views:ImageShowView Grid.Column="0"/>
+        <Border Grid.Column="1" BorderThickness="3" BorderBrush="AliceBlue"/>
+        <StackPanel Name="ShellPanel" Orientation="Vertical" Grid.Column="2">
+            <Button Name="OpenImageAlgorithm" Content="打开图像算法测试" FontWeight="Bold" FontSize="16" FontFamily="Comic Sans MS" Click="OpenImageAlgorithm_Click" Width="150" HorizontalAlignment="Left"/>
+        </StackPanel>
     </Grid>
 </controls:MetroWindow>

@@ -138,7 +138,7 @@ namespace ImageToolDemo.Views
             var realX = _srcWidth * Convert.ToInt32(mousePosition.X) / Convert.ToInt32(imageActualWidth);
             var realY = _srcHeight * Convert.ToInt32(mousePosition.Y) / Convert.ToInt32(imageActualHeight);
             var s1 = _srcArrayB.Count();
-            if ((realY * _srcWidth + realX) >= _srcWidth * _srcHeight)
+            if ((realY * _srcWidth + realX) >= _srcWidth * _srcHeight || (realY * _srcWidth + realX) < 0)
                 return;
             var r = _srcArrayR[realY * _srcWidth + realX];
             var g = _srcArrayG[realY * _srcWidth + realX];
